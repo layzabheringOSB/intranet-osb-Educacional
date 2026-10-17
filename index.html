@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intranet de Cursos | Observatório Social do Brasil</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">OSB</span>
+        <span class="logo-text">Intranet Cursos</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#cursos" class="active">Cursos</a>
+        <a href="sobre.html">Sobre a Plataforma</a>
+        <a href="aluno.html" class="btn btn-outline">Área do Aluno</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-tag">Capacitação & Cidadania Fiscal</div>
+      <h1>Plataforma Interna de Cursos OSB</h1>
+      <p>Acesse nossos treinamentos, workshops e conteúdos exclusivos para voluntários e parceiros do Observatório Social do Brasil.</p>
+      <a href="#cursos" class="btn btn-primary">Explorar Cursos</a>
+    </div>
+  </section>
+
+  <section id="cursos" class="courses-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Treinamentos e Cursos em Destaque</h2>
+        <p>Acompanhe os módulos de capacitação diretamente na plataforma</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
+
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="carouselTrack">
+            
+            <article class="course-card card-highlight">
+                <div>
+                    <div class="card-tag tag-start">Módulo 0 • Onboarding</div>
+                    <h3>Inicie as atividades no observatório</h3>
+                    <p>Boas-vindas ao OSB! Entenda nossa cultura, diretrizes éticas, primeiros passos do voluntário e como utilizar a intranet.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.youtube.com/@osdobrasil/videos" target="_blank" rel="noopener noreferrer" class="btn-watch" style="text-decoration: none;">
+                    <span class="icon">&#9654;</span> Assistir no YouTube
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card">
+              <div>
+                <div class="card-tag">Módulo 1</div>
+                <h3>Introdução ao Controle Social</h3>
+                <p>Aprenda os fundamentos da transparência pública e da fiscalização dos recursos municipais.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn-watch play-video-btn" data-video-id="dQw4w9WgXcQ">
+                  <span class="icon">&#9654;</span> Assistir Módulo
+                </button>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <div>
+                <div class="card-tag">Módulo 2</div>
+                <h3>Análise de Licitações Públicas</h3>
+                <p>Métodos práticos para acompanhamento e auditoria de editais e compras públicas.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn-watch play-video-btn" data-video-id="dQw4w9WgXcQ">
+                  <span class="icon">&#9654;</span> Assistir Módulo
+                </button>
+              </div>
+            </article>
+
+            <article class="course-card">
+              <div>
+                <div class="card-tag">Módulo 3</div>
+                <h3>Gestão de Indicadores da Cidade</h3>
+                <p>Como estruturar relatórios e acompanhar a aplicação correta dos recursos orçamentários.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn-watch play-video-btn" data-video-id="dQw4w9WgXcQ">
+                  <span class="icon">&#9654;</span> Assistir Módulo
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="course-card">
+              <div>
+                <div class="card-tag">Módulo 4</div>
+                <h3>Comunicação e Engajamento Social</h3>
+                <p>Estratégias de divulgação das ações do Observatório Social para a comunidade.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn-watch play-video-btn" data-video-id="dQw4w9WgXcQ">
+                  <span class="icon">&#9654;</span> Assistir Módulo
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Próximo">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-modal" id="videoModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="iframe-container">
+        <iframe id="youtubeIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; Observatório Social do Brasil — Sistema de Intranet Interna</p>
+      <p class="footer-subtext">Por um Brasil transparente, justo e consciente.</p>
+    </div>
+  </footer>
+ 
+  <script src="script.js"></script>
+</body>
+</html>

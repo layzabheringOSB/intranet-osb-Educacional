@@ -1,0 +1,527 @@
+
+:root {
+  --green-primary: #1ba048;      /* Verde institucional OSB */
+  --green-dark: #127233;         /* Verde escuro para hover */
+  --green-light: #e8f5ec;        /* Fundo suave em verde */
+  --dark-bg: #0d1b13;            /* Fundo escuro tecnológico */
+  --dark-surface: #15281e;       /* Card / Superfície escura */
+  --text-main: #2b2b2b;          /* Texto principal */
+  --text-muted: #666666;         /* Texto secundário */
+  --text-light: #ffffff;         /* Texto claro */
+  --border-color: #e2e8f0;
+  --font-family: 'Inter', sans-serif;
+}
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f8faf8;
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--dark-bg);
+  text-decoration: none;
+}
+
+.logo-badge {
+  background-color: var(--green-primary);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+}
+
+.nav a:hover, .nav a.active {
+  color: var(--green-primary);
+}
+
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--green-primary);
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--green-dark);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--green-primary);
+  color: var(--green-primary) !important;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--green-primary);
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   HERO / BANNER DE PÁGINAS
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+  color: var(--text-light);
+  padding: 60px 0 70px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-container {
+  max-width: 800px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: rgba(27, 160, 72, 0.25);
+  color: #4ade80;
+  border: 1px solid rgba(27, 160, 72, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #b3cbbd;
+  margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   CARROSSEL DE CURSOS
+   ========================================================================== */
+.courses-section {
+  padding: 70px 0 90px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: var(--dark-bg);
+  font-weight: 700;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* CARD DE CURSO */
+.course-card {
+  min-width: calc(33.333% - 14px);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.course-card.card-highlight {
+  border: 2px solid var(--green-primary);
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(27, 160, 72, 0.12);
+  border-color: var(--green-primary);
+}
+
+.card-tag {
+  display: inline-block;
+  background-color: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.card-tag.tag-start {
+  background-color: var(--green-primary);
+  color: #ffffff;
+}
+
+.course-card h3 {
+  font-size: 1.25rem;
+  color: var(--dark-bg);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.course-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.card-footer {
+  margin-top: auto;
+}
+
+.btn-watch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--green-primary);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-watch:hover {
+  background-color: var(--green-dark);
+}
+
+/* BOTÕES NAVEGAÇÃO CARROSSEL */
+.carousel-btn {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
+  color: var(--dark-bg);
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: var(--green-primary);
+  color: #ffffff;
+  border-color: var(--green-primary);
+}
+
+.prev-btn { left: -24px; }
+.next-btn { right: -24px; }
+
+/* ==========================================================================
+   ESTILOS COMPLETOS DA CENTRAL DO ALUNO & SOBRE
+   ========================================================================== */
+.content-section {
+  padding: 60px 0 80px 0;
+  flex-grow: 1; /* Garante que o footer fique sempre no final */
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.info-card h3 {
+  color: var(--green-dark);
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.info-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ESTILIZAÇÃO DA LISTA DE MATERIAIS DE APOIO */
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: var(--green-light);
+  border: 1px solid rgba(27, 160, 72, 0.15);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--dark-bg);
+}
+
+.btn-download {
+  background-color: var(--green-primary);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: var(--green-dark);
+}
+
+/* ESTILIZAÇÃO COMPLETA DO FORMULÁRIO DE CERTIFICADO */
+.student-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark-bg);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background-color: #fcfdfc;
+  color: var(--text-main);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px rgba(27, 160, 72, 0.15);
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   MODAL / POPUP DE VÍDEO
+   ========================================================================== */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1001;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1002;
+  line-height: 1;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.footer {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  padding: 35px 0;
+  text-align: center;
+  border-top: 4px solid var(--green-primary);
+  margin-top: auto; /* Garante que o footer empurre para o fim */
+  width: 100%;
+}
+
+.footer-subtext {
+  font-size: 0.85rem;
+  color: #88a393;
+  margin-top: 6px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .course-card { min-width: calc(50% - 10px); }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .course-card { min-width: 100%; }
+  .prev-btn { left: -10px; }
+  .next-btn { right: -10px; }
+  .hero h1 { font-size: 1.9rem; }
+}

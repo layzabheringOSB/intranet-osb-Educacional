@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central do Aluno | Observatório Social do Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">OSB</span>
+        <span class="logo-text">Intranet Cursos</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#cursos">Cursos</a>
+        <a href="sobre.html">Sobre a Plataforma</a>
+        <a href="aluno.html" class="btn btn-primary">Área do Aluno</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-tag">Espaço de Apoio</div>
+      <h1>Central do Aluno & Apoio Acadêmico</h1>
+      <p>Baixe materiais de apoio, guias práticos e solicite seu certificado de conclusão dos cursos.</p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="content-section">
+    <div class="container">
+      
+      <div class="grid-2">
+        
+        <!-- MATERIAIS DE APOIO -->
+        <div class="info-card">
+          <h3>📑 Materiais de Apoio & PDFs</h3>
+          <p>Acesse os modelos e arquivos disponibilizados para acompanhamento das aulas:</p>
+          
+          <ul class="resource-list">
+            <li class="resource-item">
+              <span>Guia Básico de Licitações (PDF)</span>
+              <a href="#" class="btn-download" onclick="alert('Download simulado com sucesso!')">Baixar</a>
+            </li>
+            <li class="resource-item">
+              <span>Checklist para Análise de Editais (.XLSX)</span>
+              <a href="#" class="btn-download" onclick="alert('Download simulado com sucesso!')">Baixar</a>
+            </li>
+            <li class="resource-item">
+              <span>Manual de Atuação do Voluntário OSB</span>
+              <a href="#" class="btn-download" onclick="alert('Download simulado com sucesso!')">Baixar</a>
+            </li>
+            <li class="resource-item">
+              <span>Modelo de Relatório de Fiscalização</span>
+              <a href="#" class="btn-download" onclick="alert('Download simulado com sucesso!')">Baixar</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FORMULÁRIO DE CERTIFICADO -->
+        <div class="info-card">
+          <h3>🎓 Solicitar Certificado / Atendimento</h3>
+          <p>Concluiu as videoaulas? Envie seus dados para validação da equipe interna do OSB.</p>
+          
+          <form class="student-form" onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso!');">
+            <div class="form-group">
+              <label for="nome">Nome Completo:</label>
+              <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail de Contato:</label>
+              <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="curso">Curso Concluído:</label>
+              <select id="curso">
+                <option>Módulo 0 - Inicie as atividades no observatório</option>
+                <option>Módulo 1 - Introdução ao Controle Social</option>
+                <option>Módulo 2 - Análise de Licitações Públicas</option>
+                <option>Módulo 3 - Gestão de Indicadores da Cidade</option>
+                <option>Módulo 4 - Comunicação e Engajamento Social</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 5px;">Enviar Solicitação</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; Observatório Social do Brasil — Sistema de Intranet Interna</p>
+      <p class="footer-subtext">Por um Brasil transparente, justo e consciente.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
